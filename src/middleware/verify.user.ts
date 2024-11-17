@@ -2,13 +2,12 @@ import { NextFunction, Request, Response } from "express";
 import { CommonResponse } from "../schema/common-response";
 import { verifyJWT } from "../security/secure";
 
-import * as express from 'express';
 import { User } from "../schema/user.schema";
 
 declare global {
     namespace Express {
         interface Request {
-            user?: User; // Add your custom property here
+            user?: User; 
         }
     }
 }

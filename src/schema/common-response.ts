@@ -5,5 +5,4 @@ export interface CommonResponse<T = void> {
     data?: T;
     token?: string;
     publicKey?: string;
-    password?: string;
 }
