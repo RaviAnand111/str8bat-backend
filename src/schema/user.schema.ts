@@ -99,11 +99,12 @@ export async function loginUser(user: User): Promise<User> {
 
 export async function updateUser(email: string, user: User): Promise<User> {
     const [result] = await pool.update(user).from('users').where('email', email).returning('*');
+  console.log(result, 'result')
     if (!result) throw new Error('Invalid email or password');
     return {
         user_id: result.user_id,
         name: result.name,
-        email: result.email,
+        //email: result.email,
         date_of_birth: result.date_of_birth,
         phone_number: result.phone_number,
         gender: result.gender,
